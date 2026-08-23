@@ -1,6 +1,6 @@
 Extension { #name : 'Rudesheim' }
 
-{ #category : '*Rudesheim-REST-REST' }
+{ #category : '*Rudesheim-HTTP-REST' }
 Rudesheim class >> Http [
 
 	^ HttpRudesheim.

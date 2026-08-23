@@ -24,7 +24,7 @@ BaselineOfRudesheimHTTP >> baseline: spec [
 						requires: #( 'RudesheimKernel' )
 				];
 
-				package: 'Rudesheim-REST'
+				package: 'Rudesheim-HTTP'
 				with:
 				[
 					spec
@@ -49,11 +49,11 @@ BaselineOfRudesheimHTTP >> baseline: spec [
 				with:
 				[
 					spec
-						requires: #( 'Rudesheim-HTTP-REST' 'Rudesheim-REST' 'Rudesheim-HTTP-REST-Discord' 'Rudesheim-HTTP-REST-Notion' )
+						requires: #( 'Rudesheim-HTTP' 'Rudesheim-HTTP-REST' 'Rudesheim-HTTP-REST-Discord' 'Rudesheim-HTTP-REST-Notion' )
 				];
 
 				group:		#core
-				with:		#( 'Rudesheim-HTTP-REST' 'Rudesheim-REST' );
+				with:		#( 'Rudesheim-HTTP' 'Rudesheim-HTTP-REST' );
 
 				group:		#services
 				with:		#( #core 'Rudesheim-HTTP-REST-Discord' 'Rudesheim-HTTP-REST-Notion' );

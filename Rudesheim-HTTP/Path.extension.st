@@ -1,6 +1,6 @@
 Extension { #name : 'Path' }
 
-{ #category : '*Rudesheim-REST-REST' }
+{ #category : '*Rudesheim-HTTP-REST' }
 Path >> ensureSTON [
 	|
 		root
@@ -27,7 +27,7 @@ Path >> ensureSTON [
 
 ]
 
-{ #category : '*Rudesheim-REST-REST' }
+{ #category : '*Rudesheim-HTTP-REST' }
 Path >> ensureSTONWith: anObject [
 	|
 		body
@@ -42,7 +42,7 @@ Path >> ensureSTONWith: anObject [
 
 ]
 
-{ #category : '*Rudesheim-REST-REST' }
+{ #category : '*Rudesheim-HTTP-REST' }
 Path >> readSTON: aSTON [
 
 	^ self segments 
@@ -55,7 +55,7 @@ Path >> readSTON: aSTON [
 
 ]
 
-{ #category : '*Rudesheim-REST-REST' }
+{ #category : '*Rudesheim-HTTP-REST' }
 Path >> write:	anObject
 toSTON:	aSTON [
 	

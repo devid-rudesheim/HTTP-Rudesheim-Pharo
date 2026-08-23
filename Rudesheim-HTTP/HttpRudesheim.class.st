@@ -1,8 +1,8 @@
 Class {
 	#name : 'HttpRudesheim',
 	#superclass : 'Object',
-	#category : 'Rudesheim-REST-REST',
-	#package : 'Rudesheim-REST',
+	#category : 'Rudesheim-HTTP-REST',
+	#package : 'Rudesheim-HTTP',
 	#tag : 'REST'
 }
 
