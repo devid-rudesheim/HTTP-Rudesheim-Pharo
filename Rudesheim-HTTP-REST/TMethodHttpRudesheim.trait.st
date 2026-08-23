@@ -6,9 +6,8 @@ Trait {
 }
 
 { #category : 'converting' }
-TMethodHttpRudesheim >> convertClient:		aZnClient
-withProperties:	aSTON [
-
+TMethodHttpRudesheim >> convertClient: aZnClient
+withProperties: aSTON [
 	^ aZnClient
 		entity:
 		(
@@ -19,18 +18,16 @@ withProperties:	aSTON [
 						toJsonString:	aSTON
 				)
 		);
-		yourself
+		yourself.
 ]
 
 { #category : 'converting' }
-TMethodHttpRudesheim >> convertUrl:			aZnUrl
-withProperties:	aSTON [
-	
-	^ aZnUrl
+TMethodHttpRudesheim >> convertUrl: aZnUrl
+withProperties: aSTON [
+	^ aZnUrl.
 ]
 
 { #category : 'sending' }
 TMethodHttpRudesheim >> sendRequestBy: aZnClient [
-
 	^ self subclassResponsibility.
 ]

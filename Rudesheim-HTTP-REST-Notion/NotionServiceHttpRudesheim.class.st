@@ -9,37 +9,35 @@ Class {
 
 { #category : 'namespace' }
 NotionServiceHttpRudesheim class >> Exception [
-
-	^ ExceptionNotionServiceHttpRudesheim
+	^ ExceptionNotionServiceHttpRudesheim.
 ]
 
 { #category : 'accessing' }
 NotionServiceHttpRudesheim class >> baseUrl [
-
 	^ 'https://api.notion.com/v1' asUrl.
 ]
 
 { #category : 'test' }
 NotionServiceHttpRudesheim class >> checkResponse: aSTON [
-
 	aSTON
-		at: 		'object'
+		at:	'object'
 		ifPresent:
 		[ :value |
-			'error' = value 
+			'error' = value
 				ifTrue:
 				[
 					aSTON inspect.
+
 					self Exception Error
 						signal:	'failure'.
-				]
+				].
 		].
 
 	^ aSTON.
 ]
 
 { #category : 'queries' }
-NotionServiceHttpRudesheim class >> ls:		aKeyString [
+NotionServiceHttpRudesheim class >> ls: aKeyString [
 	|
 		http
 	|
@@ -49,15 +47,15 @@ NotionServiceHttpRudesheim class >> ls:		aKeyString [
 	^ http Client
 		send:
 		{
-			'pages' asUrl / aKeyString
+			( 'pages' asUrl / aKeyString )
 		}
-		toHttpService:		self
-		by: 				http Method Get
-		as: 				STONJSON.
+		toHttpService:	self
+		by:	http Method Get
+		as:	STONJSON.
 ]
 
 { #category : 'queries' }
-NotionServiceHttpRudesheim class >> selectFrom:		aKeyString [
+NotionServiceHttpRudesheim class >> selectFrom: aKeyString [
 	|
 		http
 	|
@@ -67,16 +65,16 @@ NotionServiceHttpRudesheim class >> selectFrom:		aKeyString [
 	^ http Client
 		send:
 		{
-			'databases' asUrl / aKeyString / 'query'.
+			( 'databases' asUrl / aKeyString / 'query' )
 		}
-		toHttpService:		self
-		by: 				http Method Post
-		as: 				STONJSON.
+		toHttpService:	self
+		by:	http Method Post
+		as:	STONJSON.
 ]
 
 { #category : 'queries' }
-NotionServiceHttpRudesheim class >> selectFrom:		aKeyString
-where: 			aSTON [
+NotionServiceHttpRudesheim class >> selectFrom: aKeyString
+where: aSTON [
 	|
 		http
 	|
@@ -86,32 +84,27 @@ where: 			aSTON [
 	^ http Client
 		send:
 		{
-			'databases' asUrl / aKeyString / 'query'.
-			aSTON.
+			( 'databases' asUrl / aKeyString / 'query' ).
+			aSTON
 		}
-		toHttpService:		self
-		by: 				http Method Post
-		as: 				STONJSON.
+		toHttpService:	self
+		by:	http Method Post
+		as:	STONJSON.
 ]
 
 { #category : 'accessing' }
 NotionServiceHttpRudesheim class >> templateAsHttpClient [
-
 	^ ZnClient new
-		
-		headerAt:		'Authorization'
-		put:			'Bearer <token>';
-
-		headerAt:		'Notion-Version'
-		put:			'2022-06-28';
-		
+		headerAt:	'Authorization'
+		put:	'Bearer <token>';
+		headerAt:	'Notion-Version'
+		put:	'2022-06-28';
 		yourself.
-
 ]
 
 { #category : 'queries' }
-NotionServiceHttpRudesheim class >> update:		aKeyString
-set: 		aSTON [
+NotionServiceHttpRudesheim class >> update: aKeyString
+set: aSTON [
 	|
 		http
 	|
@@ -121,10 +114,10 @@ set: 		aSTON [
 	^ http Client
 		send:
 		{
-			'pages' asUrl / aKeyString.
+			( 'pages' asUrl / aKeyString ).
 			aSTON
 		}
-		toHttpService:		self
-		by: 				http Method Patch
-		as: 				STONJSON.
+		toHttpService:	self
+		by:	http Method Patch
+		as:	STONJSON.
 ]

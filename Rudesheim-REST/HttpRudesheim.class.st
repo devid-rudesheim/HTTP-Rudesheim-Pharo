@@ -13,12 +13,10 @@ HttpRudesheim class >> Client [
 
 { #category : 'namespace' }
 HttpRudesheim class >> Method [
-
-	^ MethodHttpRudesheim
+	^ MethodHttpRudesheim.
 ]
 
 { #category : 'namespace' }
 HttpRudesheim class >> Service [
-
 	^ ServiceHttpRudesheim.
 ]

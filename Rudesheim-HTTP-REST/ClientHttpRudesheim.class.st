@@ -7,15 +7,16 @@ Class {
 }
 
 { #category : 'requesting' }
-ClientHttpRudesheim class >> send: 			aRequest
-toHttpService:	aService
-by:				aHttpMethodRudesheim
-as:				aStringParser [
+ClientHttpRudesheim class >> send: aRequest
+toHttpService: aService
+by: aHttpMethodRudesheim
+as: aStringParser [
 	|
 		properties
 	|
 
 	properties := Dictionary empty.
+
 	1 < aRequest size
 		ifTrue:
 		[
@@ -36,18 +37,15 @@ as:				aStringParser [
 								(
 									aService templateAsHttpClient
 										url:
-										(
-											aService baseUrl
-											/
+											aService baseUrl /
 											(
 												aHttpMethodRudesheim
-													convertUrl:			aRequest first
-													withProperties: 	properties
-											)
-										);
+													convertUrl:	aRequest first
+													withProperties:	properties
+											);
 										yourself
 								)
-								withProperties: properties
+								withProperties:	properties
 						)
 				)
 		).
