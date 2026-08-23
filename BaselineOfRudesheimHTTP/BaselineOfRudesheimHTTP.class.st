@@ -45,11 +45,21 @@ BaselineOfRudesheimHTTP >> baseline: spec [
 						requires: #( 'Rudesheim-HTTP-REST' )
 				];
 
+				package: 'Rudesheim-HTTP-REST-Tests'
+				with:
+				[
+					spec
+						requires: #( 'Rudesheim-HTTP-REST' 'Rudesheim-REST' 'Rudesheim-HTTP-REST-Discord' 'Rudesheim-HTTP-REST-Notion' )
+				];
+
 				group:		#core
 				with:		#( 'Rudesheim-HTTP-REST' 'Rudesheim-REST' );
 
 				group:		#services
 				with:		#( #core 'Rudesheim-HTTP-REST-Discord' 'Rudesheim-HTTP-REST-Notion' );
+
+				group:		#tests
+				with:		#( #services 'Rudesheim-HTTP-REST-Tests' );
 
 				group:		#default
 				with:		#( #core ).

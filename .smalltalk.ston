@@ -1,0 +1,14 @@
+SmalltalkCISpec {
+  #loading : [
+    SCIMetacelloLoadSpec {
+      #baseline : 'RudesheimHTTP',
+      #load : [ 'tests' ],
+      #registerInIceberg : true
+    }
+  ],
+  #testing : {
+    #include : {
+      #packages : [ 'Rudesheim-HTTP-REST-Tests' ]
+    }
+  }
+}
