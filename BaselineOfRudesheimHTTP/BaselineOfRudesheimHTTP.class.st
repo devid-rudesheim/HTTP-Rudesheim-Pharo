@@ -10,58 +10,53 @@ BaselineOfRudesheimHTTP >> baseline: spec [
 	<baseline>
 
 	spec
-		for: #common
+		for:	#common
 		do:
 		[
 			spec
-				baseline: 'RudesheimKernel'
-				with: [ spec repository: 'github://devid-rudesheim/Kernel-Rudesheim-Pharo:develop' ];
-
-				package: 'Rudesheim-HTTP-REST'
+				baseline:	'RudesheimKernel'
 				with:
 				[
 					spec
-						requires: #( 'RudesheimKernel' )
+						repository:	'github://devid-rudesheim/Kernel-Rudesheim-Pharo:develop'.
 				];
-
-				package: 'Rudesheim-HTTP'
+				package:	'Rudesheim-HTTP-REST'
 				with:
 				[
 					spec
-						requires: #( 'Rudesheim-HTTP-REST' )
+						requires:	#( 'RudesheimKernel' ).
 				];
-
-				package: 'Rudesheim-HTTP-REST-Discord'
+				package:	'Rudesheim-HTTP'
 				with:
 				[
 					spec
-						requires: #( 'Rudesheim-HTTP-REST' )
+						requires:	#( 'Rudesheim-HTTP-REST' ).
 				];
-
-				package: 'Rudesheim-HTTP-REST-Notion'
+				package:	'Rudesheim-HTTP-REST-Discord'
 				with:
 				[
 					spec
-						requires: #( 'Rudesheim-HTTP-REST' )
+						requires:	#( 'Rudesheim-HTTP-REST' ).
 				];
-
-				package: 'Rudesheim-HTTP-REST-Tests'
+				package:	'Rudesheim-HTTP-REST-Notion'
 				with:
 				[
 					spec
-						requires: #( 'Rudesheim-HTTP' 'Rudesheim-HTTP-REST' 'Rudesheim-HTTP-REST-Discord' 'Rudesheim-HTTP-REST-Notion' )
+						requires:	#( 'Rudesheim-HTTP-REST' ).
 				];
-
-				group:		#core
-				with:		#( 'Rudesheim-HTTP' 'Rudesheim-HTTP-REST' );
-
-				group:		#services
-				with:		#( #core 'Rudesheim-HTTP-REST-Discord' 'Rudesheim-HTTP-REST-Notion' );
-
-				group:		#tests
-				with:		#( #services 'Rudesheim-HTTP-REST-Tests' );
-
-				group:		#default
-				with:		#( #core ).
-		]
+				package:	'Rudesheim-HTTP-REST-Tests'
+				with:
+				[
+					spec
+						requires:	#( 'Rudesheim-HTTP' 'Rudesheim-HTTP-REST' 'Rudesheim-HTTP-REST-Discord' 'Rudesheim-HTTP-REST-Notion' ).
+				];
+				group:	#core
+				with:	#( 'Rudesheim-HTTP' 'Rudesheim-HTTP-REST' );
+				group:	#services
+				with:	#( #core 'Rudesheim-HTTP-REST-Discord' 'Rudesheim-HTTP-REST-Notion' );
+				group:	#tests
+				with:	#( #services 'Rudesheim-HTTP-REST-Tests' );
+				group:	#default
+				with:	#( #core ).
+		].
 ]

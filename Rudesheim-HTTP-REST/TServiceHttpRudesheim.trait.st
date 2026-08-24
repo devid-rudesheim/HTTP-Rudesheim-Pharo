@@ -7,18 +7,15 @@ Trait {
 
 { #category : 'accessing' }
 TServiceHttpRudesheim >> baseUrl [
-
 	^ self subclassResponsibility.
 ]
 
 { #category : 'test' }
 TServiceHttpRudesheim >> checkResponse: aSTON [
-
 	^ self subclassResponsibility.
 ]
 
 { #category : 'accessing' }
 TServiceHttpRudesheim >> templateAsHttpClient [
-
 	^ self subclassResponsibility.
 ]

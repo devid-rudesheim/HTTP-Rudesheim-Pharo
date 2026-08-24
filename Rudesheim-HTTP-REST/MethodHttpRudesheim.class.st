@@ -8,18 +8,15 @@ Class {
 
 { #category : 'namespace' }
 MethodHttpRudesheim class >> Get [
-
 	^ GetMethodHttpRudesheim.
 ]
 
 { #category : 'namespace' }
 MethodHttpRudesheim class >> Patch [
-
-	^ PatchMethodHttpRudesheim
+	^ PatchMethodHttpRudesheim.
 ]
 
 { #category : 'namespace' }
 MethodHttpRudesheim class >> Post [
-
 	^ PostMethodHttpRudesheim.
 ]
