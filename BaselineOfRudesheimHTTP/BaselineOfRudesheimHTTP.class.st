@@ -15,7 +15,7 @@ BaselineOfRudesheimHTTP >> baseline: spec [
 		[
 			spec
 				baseline: 'RudesheimKernel'
-				with: [ spec repository: 'github://devid-rudesheim/Kernel-Rudesheim-Pharo:main' ];
+				with: [ spec repository: 'github://devid-rudesheim/Kernel-Rudesheim-Pharo:develop' ];
 
 				package: 'Rudesheim-HTTP-REST'
 				with:
