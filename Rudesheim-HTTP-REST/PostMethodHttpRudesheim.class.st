@@ -9,6 +9,5 @@ Class {
 
 { #category : 'sending' }
 PostMethodHttpRudesheim class >> sendRequestBy: aZnClient [
-
 	^ aZnClient post.
 ]
