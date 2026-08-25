@@ -8,6 +8,5 @@ Class {
 
 { #category : 'namespace' }
 ExceptionNotionServiceHttpRudesheim class >> Error [
-
-	^ ErrorExceptionNotionServiceHttpRudesheim
+	^ ErrorExceptionNotionServiceHttpRudesheim.
 ]

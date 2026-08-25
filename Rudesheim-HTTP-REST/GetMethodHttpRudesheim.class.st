@@ -8,14 +8,12 @@ Class {
 }
 
 { #category : 'converting' }
-GetMethodHttpRudesheim class >> convertClient:		aZnClient
-withProperties:	aSTON [
-
-	^ aZnClient
+GetMethodHttpRudesheim class >> convertClient: aZnClient
+withProperties: aSTON [
+	^ aZnClient.
 ]
 
 { #category : 'sending' }
 GetMethodHttpRudesheim class >> sendRequestBy: aZnClient [
-
 	^ aZnClient get.
 ]

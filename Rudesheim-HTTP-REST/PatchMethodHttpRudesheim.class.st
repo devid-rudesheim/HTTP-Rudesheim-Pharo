@@ -9,6 +9,5 @@ Class {
 
 { #category : 'sending' }
 PatchMethodHttpRudesheim class >> sendRequestBy: aZnClient [
-
 	^ aZnClient patch.
 ]
