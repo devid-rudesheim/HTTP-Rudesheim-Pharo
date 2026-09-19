@@ -1,25 +1,30 @@
 Class {
 	#name : 'RudesheimHTTPBaselineTest',
-	#superclass : 'TestCase',
+	#superclass : 'BasicRudesheimTest',
 	#tag : 'REST',
 	#category : 'Rudesheim-HTTP-REST-Tests',
 	#package : 'Rudesheim-HTTP-REST-Tests'
 }
 
+{ #category : 'accessing' }
+RudesheimHTTPBaselineTest class >> targetClass [
+	^ Rudesheim.
+]
+
 { #category : 'tests' }
 RudesheimHTTPBaselineTest >> testHttpEntryPoint [
 	self
-		assert:	Rudesheim Http
+		assert:	self basicTarget class Http
 		equals:	HttpRudesheim.
 ]
 
 { #category : 'tests' }
 RudesheimHTTPBaselineTest >> testServiceEntryPoints [
 	self
-		assert:	Rudesheim Http Service Discord
+		assert:	self basicTarget class Http Service Discord
 		equals:	DiscordServiceHttpRudesheim.
 
 	self
-		assert:	Rudesheim Http Service Notion
+		assert:	self basicTarget class Http Service Notion
 		equals:	NotionServiceHttpRudesheim.
 ]
