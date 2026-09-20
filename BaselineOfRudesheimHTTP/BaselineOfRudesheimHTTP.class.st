@@ -20,6 +20,12 @@ BaselineOfRudesheimHTTP >> baseline: spec [
 					spec
 						repository:	'github://devid-rudesheim/Kernel-Rudesheim-Pharo:develop'.
 				];
+				baseline:	'RudesheimUtility'
+				with:
+				[
+					spec
+						repository:	'github://devid-rudesheim/Utility-Rudesheim-Pharo:develop'.
+				];
 				package:	'Rudesheim-HTTP-REST'
 				with:
 				[
@@ -44,11 +50,18 @@ BaselineOfRudesheimHTTP >> baseline: spec [
 					spec
 						requires:	#( 'Rudesheim-HTTP-REST' ).
 				];
+				project:	'RudesheimUtilityTests'
+				copyFrom:	'RudesheimUtility'
+				with:
+				[
+					spec
+						loads:	#( 'tests' ).
+				];
 				package:	'Rudesheim-HTTP-REST-Tests'
 				with:
 				[
 					spec
-						requires:	#( 'Rudesheim-HTTP' 'Rudesheim-HTTP-REST' 'Rudesheim-HTTP-REST-Discord' 'Rudesheim-HTTP-REST-Notion' ).
+						requires:	#( 'Rudesheim-HTTP' 'Rudesheim-HTTP-REST' 'Rudesheim-HTTP-REST-Discord' 'Rudesheim-HTTP-REST-Notion' 'RudesheimUtilityTests' ).
 				];
 				group:	#core
 				with:	#( 'Rudesheim-HTTP' 'Rudesheim-HTTP-REST' );
